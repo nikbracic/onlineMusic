@@ -1,1 +1,10 @@
-<p>Hello onlineMusic</p>
+<div id="head">
+  <% unless user_signed_in? %>
+      <h1>Welcome to onlineMusic</h1>
+      <p>Listen to your music everywhere you are!</p>
+  </div>
+
+  <% else %>
+        <p>Welcome!</p>
+  <% end %>
+
