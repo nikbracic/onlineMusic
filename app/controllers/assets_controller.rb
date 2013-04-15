@@ -5,10 +5,6 @@ class AssetsController < ApplicationController
     @assets = current_user.assets
   end
 
-  def show
-    @asset = current_user.assets.find(params[:id])
-  end
-
   def new
     @asset = current_user.assets.new
   end
@@ -16,7 +12,7 @@ class AssetsController < ApplicationController
   def create
     @asset = current_user.assets.new(params[:asset])
     if @asset.save
-      redirect_to @asset, :notice => "Successfully created asset."
+      redirect_to root_url,  flash[:notice]  => "Successfully uploaded song."
     else
       render :action => 'new'
     end
@@ -29,17 +25,20 @@ class AssetsController < ApplicationController
   def update
     @asset = current_user.assets.find(params[:id])
     if @asset.update_attributes(params[:asset])
-      redirect_to @asset, :notice  => "Successfully updated asset."
+      redirect_to root_url, flash[:notice]  => "Successfully updated song."
     else
       render :action => 'edit'
     end
   end
 
-  def destroy
+  def show
     @asset = current_user.assets.find(params[:id])
     @asset.destroy
-    redirect_to assets_url, :notice => "Successfully destroyed asset."
+    flash[:notice] = "Successfully deleted the file."
+
+    redirect_to root_url
   end
+
 
   #this action will let the users download the files (after a simple authorization check)
   def get

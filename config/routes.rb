@@ -13,6 +13,8 @@ OnlineMusic::Application.routes.draw do
   #this route is for file downloads
   match "assets/get/:id" => "assets#get", :as => "download"
 
+  match "/profile/index(.:format)" => "profile#index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
