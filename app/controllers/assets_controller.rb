@@ -34,7 +34,7 @@ class AssetsController < ApplicationController
   def show
     @asset = current_user.assets.find(params[:id])
     @asset.destroy
-    flash[:notice] = "Successfully deleted the file."
+    flash[:notice] = "Successfully deleted song."
 
     redirect_to root_url
   end
@@ -46,8 +46,8 @@ class AssetsController < ApplicationController
     if asset
       send_file asset.uploaded_file.path, :type => asset.uploaded_file_content_type
     else
-      flash[:error] = "Don't be cheeky! Mind your own assets!"
-      redirect_to assets_path
+      flash[:error] = "This is not your song!"
+      redirect_to root_url
     end
   end
 end
