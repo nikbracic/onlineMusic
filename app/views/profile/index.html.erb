@@ -1,8 +1,17 @@
 <div class="head">
   <% unless user_signed_in? %>
       <h1>Welcome to onlineMusic</h1>
-      <p>Listen to your music everywhere you are!</p>
+      <p>Listen to your music everywhere you are!</p><br/>
+      <h3>Here is a song sample</h3>
+      <audio controls>
+        <source src="Kalimba.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="links">
+        <br/>
+        <%= link_to "How it works?", "/how/index" %>
       </div>
+    </div>
   <% else %>
 
       <div class="head">
@@ -15,16 +24,16 @@
         </ul>
       </div>
 
-      <div class="asset_list_header">
-        <div class="file_name_header">File Name</div>
+      <div class="asset_list_header_profile">
+        <div class="file_name_header_profile">File Name</div>
         <div class="file_size_header">Size</div>
         <div class="file_last_updated_header">Modified</div>
       </div>
-      <div class="asset_list">
+      <div class="asset_list_profile">
 
         <% @assets.each do |asset| %>
             <div class="asset_details file">
-              <div class="file_name"><%= link_to asset.file_name, download_url(asset) %></div>
+              <div class="file_name_profile"><%= link_to asset.file_name, download_url(asset) %></div>
               <div class="file_size"><%= number_to_human_size(asset.file_size, :precision => 2) %></div>
               <div class="file_last_updated"><%= asset.uploaded_file_updated_at %></div>
               <div class="actions">
@@ -35,6 +44,7 @@
                   <%= link_to "Delete", asset, :confirm => 'Are you sure?', :method => :delete %>
                 </div>
               </div>
+              <div class="play_song"><%= link_to "Play song", root_path + asset.file_name %></div>
             </div>
         <% end %>
 

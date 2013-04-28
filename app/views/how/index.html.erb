@@ -1,0 +1,21 @@
+<div class="head" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+  <h2>Html 5 - Audio</h2>
+  <p>Namestil sem gemfile Paperclip, ki omogoča nalaganje datotek za našo spletno aplikacijo. Ker gre pri tej aplikaciji za predvajanje glasbe more ta omejevati datoteke, ki jih uporabnik lahko naloži <i>(v mojem primeru so to .mp3 datoteke, ki se najpogosteje uporabljajo za predvajanje glasbe)</i>.</p>
+  <p>V modelu <i>asset.rb</i> sem nastavil pogoj, da mora datoteka biti zahtevanega tipa. </p></br>
+  <img src="/images/image1.PNG" alt="slika1"/></br>
+  <p>Ker <i>audio</i> značka išče glasbo v t.i. <i>public</i> mapi, sem zaradi lažjega dela prav tako v modelu <i>asset.rb</i> nastavil, da se naložene glasbene datoteke shranijo v to mapo.</p>
+  <img src="/images/image2.PNG" alt="slika2"/></br>
+  <p>V primeru, da uporabnik hoče naložiti datoteko, ki ni .mp3 formata npr. sliko...</p>
+  <img src="/images/image3.PNG" alt="slika3"/></br>
+  <p>Mu vrne napako...</p>
+  <img src="/images/image4.PNG" alt="slika4"/></br>
+  <p>V nasprotnem primeru pa datoteko shrani v <i>public</i> mapo.</p>
+  <img src="/images/image5.PNG" alt="slika5"/></br>
+  <p>Za predvajanje glasbe imamo nato več možnosti. V mojem primeru sem uporabil dva primera in sicer z značko <i>audio</i> in z neposredno povezavo na skladbo <i>link_to</i>.</p>
+  <img src="/images/image6.PNG" alt="slika6"/></br>
+  <img src="/images/image7.PNG" alt="slika7"/></br>
+  <p>V drugem primeru sem namesto neposrednega imena glasbe uporabil <i>asset.file_name</i> in sicer zaradi tega, ker lahko s tem uporabnik predvaja vse skladbe, ki so naložene na spletni strani. Ime tako dobim s pomočjo <i>asset_controllerja</i> v funkciji <i>get</i>.</p>
+  <img src="/images/image8.PNG" alt="slika8"/></br>
+  <p><b>Nik Bračič, 4. Tra</b></p>
+</div>

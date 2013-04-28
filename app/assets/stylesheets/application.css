@@ -39,7 +39,8 @@ a img {
 }
 
 a {
-    color: #0000FF;
+    text-decoration: none;
+    color: #4B7399;
 }
 
 .clear {
@@ -109,6 +110,10 @@ a {
     font-size: 30px;
 }
 
+.head h3, .head h2 {
+    color: #4B7399;
+}
+
 .asset_list_header, .asset_list, .asset_details {
     width:800px;
     font-weight:bold;
@@ -116,11 +121,25 @@ a {
     overflow:hidden;
 
 }
+
+.asset_list_header_profile, .asset_list_profile {
+    font-weight:bold;
+    font-size:12px;
+    overflow:hidden;
+}
+
 .file_name_header, .file_name {
+    width:425px;
+    float:left;
+    padding-left:20px;
+}
+
+.file_name_profile, .file_name_header_profile {
     width:350px;
     float:left;
     padding-left:20px;
 }
+
 .file_size_header, .file_size {
     width:100px;
     float:left;
@@ -132,6 +151,11 @@ a {
 .asset_list {
     padding:20px 0;
 }
+
+.asset_list_profile {
+    padding:20px 0;
+}
+
 .asset_details {
     font-weight:normal;
     height:25px;
@@ -141,9 +165,10 @@ a {
     color:#4F4F4F;
 }
 
+
 .asset_details a, .asset_details a:visited {
     text-decoration:none;
-    color: #4B7399;
+    color: #666666;
     font-size:12px;
 }
 
@@ -186,14 +211,25 @@ a {
 .share, .rename, .download, .delete{
     float:left;
 }
-.asset_details .share a,.asset_details .rename a,.asset_details .download a,.asset_details .delete a{
+.asset_details .share a,.asset_details .rename a,.asset_details .delete a{
     border: 1px solid #CFE9FF;
     font-size: 11px;
     margin-left: 5px;
     padding: 0 2px;
 }
-.asset_details .share a:hover,.asset_details .rename a:hover,.asset_details .download a:hover,.asset_details .delete a:hover{
+.asset_details .share a:hover,.asset_details .rename a:hover, .asset_details .delete a:hover{
     border:1px solid #8FCDFF;
+}
+
+.asset_details .download a {
+    border: 1px solid #999999;
+    font-size: 11px;
+    margin-left: 5px;
+    padding: 0 2px;
+}
+
+.asset_details .download a:hover {
+    border:1px solid #666;
 }
 
 .asset_details .delete a{
@@ -208,4 +244,16 @@ a {
 
 .clear{
     clear: both;
+}
+.play_song a {
+    border: 1px solid #6BA4DB;
+    font-size: 11px;
+    margin-left: 25px;
+    padding: 1px 2px;
+    color: #4B7399 !important;
+}
+
+.play_song a:hover {
+    color: #4B7399;
+    border:1px solid #547FA8;
 }

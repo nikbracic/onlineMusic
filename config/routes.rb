@@ -15,6 +15,8 @@ OnlineMusic::Application.routes.draw do
 
   match "/profile/index(.:format)" => "profile#index"
 
+  match "/how/index(.:format)" => "how#index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
